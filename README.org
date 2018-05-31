@@ -1,0 +1,68 @@
+* DNA keyboard with 4 keys A, C, T, and G.
+
+** Steps to create
+ 1. 3d print case.
+ 2. Add and solder pro micro to 4 mechanical switches.
+ 3. Add [[https://github.com/qmk/qmk_firmware][qmk_keyboard]] software to the pro micro.
+ 4. Start typing.
+
+** Features
+*** Ambiguous nucleotides 
+ - A = adenine
+ - C = cytosine
+ - G = guanine
+ - T = thymine
+ - R = G A (purine)
+ - Y = T C (pyrimidine)
+ - K = G T (keto)
+ - M = A C (amino)
+ - S = G C (strong bonds)
+ - W = A T (weak bonds)
+ - B = G T C (all but A)
+ - D = G A T (all but C)
+ - H = A C T (all but G)
+ - V = G C A (all but T)
+ - N = A G C T (any)
+*** Amino acid typing
+To switch to this mode type out DNA from nucleotides typing mode.
+
+| Amino acid | Codons                       |
+| Ala / A    | GCU, GCC, GCA, GCG           |
+| Arg / R    | CGU, CGC, CGA, CGG, AGA, AGG |
+| Asn / N    | AAU, AAC                     |
+| Asp / D    | GAU, GAC                     |
+| Cys / C    | UGU, UGC                     |
+| Gln / Q    | CAA, CAG                     |
+| Glu / E    | GAA, GAG                     |
+| Gly / G    | GGU, GGC, GGA, GGG           |
+| His / H    | CAU, CAC                     |
+| Ile / I    | AUU, AUC, AUA                |
+| Leu / L    | UUA, UUG, CUU, CUC, CUA, CUG |
+| Lys / K    | AAA, AAG                     |
+| Met / M    | AUG                          |
+| Phe / F    | UUU, UUC                     |
+| Pro / P    | CCU, CCC, CCA, CCG           |
+| Ser / S    | UCU, UCC, UCA, UCG, AGU, AGC |
+| Thr / T    | ACU, ACC, ACA, ACG           |
+| Trp / W    | UGG                          |
+| Tyr / Y    | UAU, UAC                     |
+| Val / V    | GUU, GUC, GUA, GUG           |
+| START      | AUG                          |
+| STOP       | UAA, UGA, UAG                |
+
+*** Binary ASCII typing
+To switch to this mode type ASCII from Amino acid typing mode.
+ - ASCII is 8 bits typing letters and control codes.
+ - A sends a 1, T sends a 0, C/G quits back to amino acid typing mode.
+ - Most significant bit is typed first.
+ - So to type a newline (0x0A = 0b00001010) press TTTTATAT.
+
+*** Tetris
+To switch to this mode type TETRIS from Amino acid typing mode.
+
+** Nice 3d printed keycaps
+To get some nice keycaps I printed out A, C, T, G (75% scaled) of the
+models from [[https://www.thingiverse.com/thing:714312][Folding DNA model kit by mkuiper]].
+
+I then printed 4 keycap mounts ([[https://www.thingiverse.com/thing:344133][Cherry MX keycap mount by gcb]]) and
+glued the nucleotides to them.

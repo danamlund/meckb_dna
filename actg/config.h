@@ -43,7 +43,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
 */
 #define MATRIX_ROW_PINS { F4, F5 } // A3, A2 (pro micro)
-#define MATRIX_COL_PINS { F6, F7 } // A1, A0 (pro micro)
+#define MATRIX_COL_PINS { F7, F6 } // A0, A1 (pro micro)
 #define UNUSED_PINS
 
 /* COL2ROW, ROW2COL, or CUSTOM_MATRIX */
